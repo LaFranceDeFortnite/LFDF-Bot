@@ -27,7 +27,7 @@ bot.on('message', async message => {
         await shopItems(channelId)
     }
 
-    if (cmd === `${prefix}news`) {
+    if (cmd === `${prefix}newssss`) {
         let typeArg = args.join(" ")
         let type;
         if (!typeArg || typeArg.toLowerCase() === 'br' || typeArg.toLowerCase() === 'battle royale') {
