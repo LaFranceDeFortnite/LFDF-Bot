@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
         let infoEmbed = new Discord.RichEmbed()
             .setColor("#ff0000")
             .setTitle(":x: Erreur, Utilisateur non trouvé...")
-            .setDescription("Assurez-vous d'utiliser la bonne syntaxe : \n \n ``!ftn`` ``[platform]`` ``[user]``\n \n __Exemples :__ !ftn pc Ninja");
+            .setDescription("Assurez-vous d'utiliser la bonne syntaxe : \n \n ``!fn`` ``[platform]`` ``[user]``\n \n __Exemples :__ !ftn pc Ninja");
 
         let platform = args[0] || 'pc' || 'psn' || 'xbl';
         let username = args[1];
