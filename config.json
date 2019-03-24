@@ -10,7 +10,7 @@
         "database" : "Bonjour"
     },
     "api" : {
-        "youtube-api" : "AIzaSyCy837MIk2s4_93rPqXleF4ixMB6A2RkbE",
-        "fortnite-api" : "d02f77e6-da71-413f-8608-bf7a317de9a0"
+        "youtube-api" : process.env.youtubeAPI,
+        "fortnite-api" : process.env.fortniteAPI
     }
 }
