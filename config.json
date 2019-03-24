@@ -5,12 +5,12 @@
     "byPassPermission" : ["419536423796998155", "540597069753221149", "353187152961732608", "302845164655869963"],
     "bdd" : {
         "url" : "ds247121.mlab.com:47121",
-        "user" : "Bonjour",
+        "user" : "LFDF",
         "password" : "azerty",
-        "database" : "Bonjour"
+        "database" : "LFDF"
     },
     "api" : {
-        "youtube-api" : process.env.youtubeAPI,
-        "fortnite-api" : process.env.fortniteAPI
+        "youtube-api" : "AIzaSyCy837MIk2s4_93rPqXleF4ixMB6A2RkbE",
+        "fortnite-api" : "d02f77e6-da71-413f-8608-bf7a317de9a0"
     }
 }
