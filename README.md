@@ -1,1 +1,1 @@
-Hello, Join my Discord : https://discord.gg/nKycyg9
+Hello, Join my Discord server : https://discord.gg/nKycyg9
