@@ -26,5 +26,25 @@ module.exports = (client) => {
         }
     
     });
+    
+    client.on("message", async message => {
+
+        let statsfortnite = ['!f' ]
+        let noFound = false;
+      
+        if(message.channel.id == "527811956875329546") {
+    
+          for (var i in statsfortnite) {
+          if (!message.content.toLowerCase().includes(statsfortnite[i].toLowerCase())) noFound = true;
+        }
+          if(noFound) {
+            message.delete();
+    
+            message.author.send("Bonjour !\n Merci d'utiliser ce channel seulement pour voir vos Stats Fortnite. \n Pour parler utiliser le channel #💬général =) ");
+            return;
+          }
+        }
+    
+    });
 
 };
