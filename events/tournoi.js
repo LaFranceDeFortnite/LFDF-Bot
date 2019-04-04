@@ -33,6 +33,9 @@ module.exports = (client) => {
         let noFound = false;
       
         if(message.channel.id == "527811956875329546") {
+            if(message.member.hasPermissions("VIEW_AUDIT_LOG")) {
+              return;
+          }
     
           for (var i in statsfortnite) {
           if (!message.content.toLowerCase().includes(statsfortnite[i].toLowerCase())) noFound = true;
