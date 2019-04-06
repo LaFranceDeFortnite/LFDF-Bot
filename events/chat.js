@@ -33,10 +33,6 @@ module.exports = (client) => {
         if(spam[message.guild.id][message.author.id].length === 4){
             client.commands.get("warn").warn(client, message, message.member, message.guild.me, "Spam / PROCHAIN WARN = KICK");
         }
-        if(spam[message.guild.id][message.author.id].length >= 8){
-            client.commands.get("kick").kick(client, message, message.member, message.guild.me, "Spam");
-            spam[message.guild.id][message.author.id] = [];
-        }
     });
 };
 
