@@ -175,63 +175,50 @@ bot.login(process.env.token);
 
 bot.on("message", async message => {
 
-    if(message.author.bot) return;
-  
-    if(message.channel.type !== 'text') {
-  
-      let active = await db.fetch(`support_${message.author.id}`);
-  
-      let guild = bot.guilds.get('515604887686610944');
-  
-      let channel, found = true;
-  
+  if(message.author.bot) return;
+
+  if(message.channel.type !== 'text') {
+
+    let active = await db.fetch(`support_${message.author.id}`);
+
+    let guild = bot.guilds.get('515604887686610944');
+
+    let channel, found = true;
+
+    try {
+      if(active) bot.channels.get(active.channelID).guild;
+    }catch(e) {
+      found = false;
+    }
+
+    if(!active || !found) {
+
+      active = {};
+
+      channel = await guild.createChannel(`${message.author.username}-${message.author.discriminator}`);
+
+      channel = await channel.setParent('515876927266095105');
+
       try {
-        if(active) bot.channels.get(active.channelID).guild;
-      }catch(e) {
-        found = false;
-      }
-  
-      if(!active || !found) {
-  
-        active = {};
-  
-        channel = await guild.createChannel(`${message.author.username}-${message.author.discriminator}`);
-  
-        channel = await channel.setParent('515876927266095105');
-  
-        try {
-              let lfdfall = guild.roles.find(`name`, "【✔️】Membre");
-              let moderationrole = guild.roles.find(`name`, "【⚜️】Fondateur");
-              let respmodorole = guild.roles.find(`name`, "【⚙️】Staff");
-  
-  
-              channel.overwritePermissions(lfdfall, {
-              CREATE_INSTANT_INVITE: false,
-              KICK_MEMBERS: false,
-              BAN_MEMBERS: false,
-              ADMINISTRATOR: false,
-              MANAGE_CHANNELS: false,
-              MANAGE_GUILD: false,
-              ADD_REACTIONS: false,
-              VIEW_AUDIT_LOG: false,
-              VIEW_CHANNEL: false,
-              SEND_MESSAGES: false
-            });
-  
-            channel.overwritePermissions(moderationrole, {
-            CREATE_INSTANT_INVITE: true,
-            KICK_MEMBERS: true,
-            BAN_MEMBERS: true,
-            ADMINISTRATOR: true,
-            MANAGE_CHANNELS: true,
-            MANAGE_GUILD: true,
-            ADD_REACTIONS: true,
-            VIEW_AUDIT_LOG: true,
-            VIEW_CHANNEL: true,
-            SEND_MESSAGES: true
+            let ascalonall = guild.roles.find(`name`, "【✔️】Membre");
+            let moderationrole = guild.roles.find(`name`, "【⚜️】Fondateur");
+            let respmodorole = guild.roles.find(`name`, "【⚙️】Staff");
+
+
+            channel.overwritePermissions(ascalonall, {
+            CREATE_INSTANT_INVITE: false,
+            KICK_MEMBERS: false,
+            BAN_MEMBERS: false,
+            ADMINISTRATOR: false,
+            MANAGE_CHANNELS: false,
+            MANAGE_GUILD: false,
+            ADD_REACTIONS: false,
+            VIEW_AUDIT_LOG: false,
+            VIEW_CHANNEL: false,
+            SEND_MESSAGES: false
           });
-  
-          channel.overwritePermissions(respmodorole, {
+
+          channel.overwritePermissions(moderationrole, {
           CREATE_INSTANT_INVITE: true,
           KICK_MEMBERS: true,
           BAN_MEMBERS: true,
@@ -243,79 +230,94 @@ bot.on("message", async message => {
           VIEW_CHANNEL: true,
           SEND_MESSAGES: true
         });
-  
-          } catch(e){
-            console.log(e.stack);
-          }
-  
-        let author = message.author;
-  
-        const newChannel = new Discord.RichEmbed()
-        .setColor(0x36393e)
-        .setAuthor(author.tag)
-        .setFooter('Support Ticket Created')
-        .addField('User', author)
-        .addField('ID', author.id)
-  
-        await channel.send(newChannel);
-  
-        author.send(":wave: __**Bonjour/Bonsoir**__ ! \n \n :pushpin: Merci d'avoir contacté le __Support Bot LFDF__ ! Un membre du staff va vous répondre dans les plus brefs délais. \n \n :warning: Avertissement : Si tu envoies des Messages type **Trool**/**Lien**/**Insulte**/**Raciste** ou autres au Bot, tu seras automatiquement __Banni du Serveur__.");
-  
-        active.channelID = channel.id;
-        active.targetID = author.id;
-  
-      }
-  
-  
-      channel = bot.channels.get(active.channelID);
 
-      const embed = new Discord.RichEmbed()
+        channel.overwritePermissions(respmodorole, {
+        CREATE_INSTANT_INVITE: true,
+        KICK_MEMBERS: true,
+        BAN_MEMBERS: true,
+        ADMINISTRATOR: true,
+        MANAGE_CHANNELS: true,
+        MANAGE_GUILD: true,
+        ADD_REACTIONS: true,
+        VIEW_AUDIT_LOG: true,
+        VIEW_CHANNEL: true,
+        SEND_MESSAGES: true
+      });
+
+        } catch(e){
+          console.log(e.stack);
+        }
+
+      let author = message.author;
+
+      const newChannel = new Discord.RichEmbed()
       .setColor(0x36393e)
-      .setAuthor(message.author.tag)
-      .setDescription(message.content)
-      .setFooter(`Message Recieved -- ${message.author.tag}`)
-  
-      await channel.send(embed);
-  
-      db.set(`support_${message.author.id}`, active);
-      db.set(`supportChannel_${channel.id}`, message.author.id);
+      .setAuthor(author.tag)
+      .setFooter('Support Ticket Created')
+      .addField('User', author)
+      .addField('ID', author.id)
+
+      await channel.send(newChannel);
+
+      author.send(":flag_mf: Merci d'avoir contacté le support ! Un membre du staff va vous contacter dans les plus brefs délais \n:flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
+
+      active.channelID = channel.id;
+      active.targetID = author.id;
+
+    }
+
+
+    channel = bot.channels.get(active.channelID);
+
+   // message.author.send(":flag_mf: Votre message a été envoyé \n:flag_lr: Your message has been sent");
+
+    const embed = new Discord.RichEmbed()
+    .setColor(0x36393e)
+    .setAuthor(message.author.tag)
+    .setDescription(message.content)
+    .setFooter(`Message Recieved -- ${message.author.tag}`)
+
+    await channel.send(embed);
+
+    db.set(`support_${message.author.id}`, active);
+    db.set(`supportChannel_${channel.id}`, message.author.id);
+    return;
+  }
+
+  let support = await db.fetch(`supportChannel_${message.channel.id}`);
+
+  if(support) {
+
+    support = await db.fetch(`support_${support}`);
+
+    let supportUser = bot.users.get(support.targetID);
+    if(!supportUser) return message.channel.delete();
+
+    if(message.content.toLowerCase() == "?ban") {
+
+      message.channel.delete();
+
+      db.delete(`support_${support.targetID}`);
+      message.guild.member(supportUser).ban("Troll bot / Invite Discord");
       return;
+
     }
-  
-    let support = await db.fetch(`supportChannel_${message.channel.id}`);
-  
-    if(support) {
-  
-      support = await db.fetch(`support_${support}`);
-  
-      let supportUser = bot.users.get(support.targetID);
-      if(!supportUser) return message.channel.delete();
-  
-      if(message.content.toLowerCase() == "?ban") {
-  
+
+    if(message.content.toLowerCase() == '?complete') {
+
         message.channel.delete();
-  
+
         db.delete(`support_${support.targetID}`);
-        message.guild.member(supportUser).ban("Troll bot / Invite Discord");
         return;
-  
-      }
-  
-      if(message.content.toLowerCase() == '?close') {
-  
-          message.channel.delete();
-  
-          db.delete(`support_${support.targetID}`);
-          return;
-          }
-  
-      bot.users.get(support.targetID).send(`**${message.member.displayName}** : ${message.content}`)
-      message.delete();
-  
-  
-      return message.channel.send(`**${message.member.displayName}** : ${message.content}`);
-    }
-});
+        }
+
+    bot.users.get(support.targetID).send(`**${message.member.displayName}** : ${message.content}`)
+    message.delete();
+
+
+    return message.channel.send(`**${message.member.displayName}** : ${message.content}`);
+  }
+  });
 
 bot.on('message', message => {
     if(!message.guild) return;
