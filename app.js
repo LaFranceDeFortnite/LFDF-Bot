@@ -259,7 +259,7 @@ bot.on("message", async message => {
 
       await channel.send(newChannel);
 
-      author.send(":flag_mf: Merci d'avoir contacté le support ! Un membre du staff va vous contacter dans les plus brefs délais \n:flag_lr: Thank you for contacting the support ! A member of the staff will contact you as soon as possible");
+      author.send(":wave: __**Bonjour/Bonsoir**__ ! \n \n :pushpin: Merci d'avoir contacté le __Support Bot LFDF__ ! Un membre du staff va vous répondre dans les plus brefs délais. \n \n :warning: Avertissement : Si tu envoies des Messages type **Trool**/**Lien**/**Insulte**/**Raciste** ou autres au Bot, tu seras automatiquement __Banni du Serveur__.");
 
       active.channelID = channel.id;
       active.targetID = author.id;
@@ -303,7 +303,7 @@ bot.on("message", async message => {
 
     }
 
-    if(message.content.toLowerCase() == '?complete') {
+    if(message.content.toLowerCase() == '?close') {
 
         message.channel.delete();
 
