@@ -347,8 +347,8 @@ bot.on('message', message => {
                 .setFooter("La France De Fortnite")
             message.guild.channels.find("name", "📅sondage").sendEmbed(embed)
             .then(function (message) {
-            message.react("<:Yes:566681458928910367>")
-            message.react("<:No:566681468420489248>")
+            message.react("✅")
+            message.react("❌")
 
             }).catch(function() { 
             });
