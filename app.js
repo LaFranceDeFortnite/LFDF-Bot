@@ -341,14 +341,14 @@ bot.on('message', message => {
             bot.channels.get("515646253992771595").sendMessage("Mention : " + myRole);
             var embed = new Discord.RichEmbed()
                 .setDescription(`📅 **SONDAGE**`)
-                .addField(thingToEco, "Répondez au sondage avec <:Yes:566594310259343390> ou <:No:566594501737447424>")
+                .addField(thingToEco, "Répondez au sondage avec <:Yes:566681458928910367> ou <:No:566681468420489248>")
                 .setColor("ffc600")
                 .setTimestamp()
                 .setFooter("La France De Fortnite")
             message.guild.channels.find("name", "📅sondage").sendEmbed(embed)
             .then(function (message) {
-            message.react("<:Yes:566594310259343390>")
-            message.react("<:No:566594501737447424>")
+            message.react("<:Yes:566681458928910367>")
+            message.react("<:No:566681468420489248>")
 
             }).catch(function() { 
             });
