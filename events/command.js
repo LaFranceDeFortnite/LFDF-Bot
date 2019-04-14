@@ -3,7 +3,6 @@ module.exports = (client) => {
         if (message.author.bot) return;
         if(message.channel.type !== "text")return;
         if(message.content.toLowerCase().startsWith("!play"))message.channel.send("Utiliser `!play` pour lancer une musique");
-        if(message.content.toLowerCase().startsWith("!ftn"))message.channel.send("Utiliser `!ftn` pour voir les statistiques fortnite");
         if (message.content.indexOf(client.config.prefix) !== 0) return;
         const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
