@@ -149,5 +149,15 @@ module.exports = (client) => {
         message.delete();
         client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Say Embed**");
         }
+        if(message.content === "!sftn") {
+            var fun_embed = new Discord.RichEmbed()
+            .setColor('RANDOM')
+            .setTitle(`:metal: Commande Stats Fortnite`)
+            .setDescription(":point_right: Pour voir ces Stats Fortnite : !ftn pc/psn/xbl {pseudo} \n :point_right: Pour voir juste ces Stats Fortnite SOLO : !solo pc/psn/xbl {pseudo} \n :point_right: Pour voir juste ces Stats Fortnite DUO : !duo pc/psn/xbl {pseudo} \n :point_right: Pour voir juste ces Stats Fortnite SQUAD : !squad pc/psn/xbl {pseudo}")
+            .setTimestamp()
+            message.channel.send(fun_embed);
+            console.log('Commande Fun');
+            client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Stats Fortnite**");
+        }
     });
 };
