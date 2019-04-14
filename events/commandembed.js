@@ -75,7 +75,7 @@ module.exports = (client) => {
             .addField("**``!boutique``**", ":shopping_cart: Boutique entière (en Anglais) : https://fnbr.co/shop")
             .addField("**``!spawn``**", ":hotel: Te donne un Spawn aléatoire sur le Carte")
             .addField("**``!map``**", ":mountain_snow: Affiche la Map Fortnite")
-            .addField("**``!ftn [pseudo]``**", "📈 Voir t'es Stats Fortnite")
+            .addField("**``!sftn``**", "📈 Voir les Commandes pour les Stats Fortnite")
             .setTimestamp()
             message.channel.send(fun_embed);
             console.log('Commande Fortnite');
