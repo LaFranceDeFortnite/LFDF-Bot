@@ -66,21 +66,6 @@ module.exports = (client) => {
              console.log('Commande Modo');
              client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Modo**");
         }
-        if(message.content === "!infofortnite") {
-            var fun_embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTitle(`<:Fortnite:518772145099374605> Commande en rapport avec Fortnite !`)
-            .addField("**``!news``**", ":globe_with_meridians: Toutes les Actualité Fornite : https://www.epicgames.com/fortnite/fr/news")
-            .addField("**``!twitterfr``**", ":calling: Twitter Fornite France : https://twitter.com/FortniteFR")
-            .addField("**``!boutique``**", ":shopping_cart: Boutique entière (en Anglais) : https://fnbr.co/shop")
-            .addField("**``!spawn``**", ":hotel: Te donne un Spawn aléatoire sur le Carte")
-            .addField("**``!map``**", ":mountain_snow: Affiche la Map Fortnite")
-            .addField("**``!sftn``**", "📈 Voir les Commandes pour les Stats Fortnite")
-            .setTimestamp()
-            message.channel.send(fun_embed);
-            console.log('Commande Fortnite');
-            client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Fortnite**");
-        }
         if(message.content === prefix + "reseaux") {
             var mod_embed = new Discord.RichEmbed()
             .setColor('RANDOM')
@@ -106,15 +91,6 @@ module.exports = (client) => {
             message.channel.sendMessage(info_embed);
             console.log('Commande Info');
             client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Info**");
-        }
-        if(message.content === prefix + "map") {
-            var info_embed = new Discord.RichEmbed()
-            .setColor("#fd0071")
-            .setTitle(":triangular_flag_on_post: Voici la map actuelle Fortnite")
-            .setImage('https://cdn.discordapp.com/attachments/516014468086628352/552154178865070091/Fortnite_MapComplete_Saison8.jpg')
-            message.channel.sendMessage(info_embed);
-            console.log('Commande Map');
-            client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Map**");
         }
         if(message.content === prefix + "projet") {
             var info_embed = new Discord.RichEmbed()
@@ -148,16 +124,6 @@ module.exports = (client) => {
             message.channel.sendMessage(embed);
         message.delete();
         client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Say Embed**");
-        }
-        if(message.content === "!sftn") {
-            var fun_embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTitle(`:metal: Commande Stats Fortnite`)
-            .setDescription(":point_right: Pour voir ces Stats Fortnite : !ftn pc/psn/xbl {pseudo} \n :point_right: Pour voir juste ces Stats Fortnite SOLO : !solo pc/psn/xbl {pseudo} \n :point_right: Pour voir juste ces Stats Fortnite DUO : !duo pc/psn/xbl {pseudo} \n :point_right: Pour voir juste ces Stats Fortnite SQUAD : !squad pc/psn/xbl {pseudo}")
-            .setTimestamp()
-            message.channel.send(fun_embed);
-            console.log('Commande Fun');
-            client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Stats Fortnite**");
         }
     });
 };
