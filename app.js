@@ -320,19 +320,6 @@ bot.on("message", async message => {
   });
 
 bot.on('message', message => {
-    if(!message.guild) return;
-    let args = message.content.trim().split(/ +/g)
-    if (args[0].toLocaleLowerCase()=== prefix + "spawn") {
-        let rep = ["Loot Lake", "Lazy Lagoon", "Sunny Steps", "Lonely Lodge", "Shifty Shafts", "Haunted Hills", "Junk Junction", "Snobby Shores", "Frosty Flights", "Happy Hamlet", "Dusty Divot", "Polar Peak", "The Block", "Fatal Field", "Retail Row", "Lucky Landing", "Salty Spring", "Tilted Tower", "Pleasent Parck"];
-        let reptaille = Math.floor((Math.random()* rep.length));
-        
-        let embed = new Discord.RichEmbed()
-            .setTitle(":checkered_flag: Tu dois drop là bas !")
-            .setColor("#0092ff")
-            .setDescription("➔ " + rep[reptaille]);
-        message.reply(embed);
-    bot.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Spawn**");
-    }
     if(message.content.startsWith(prefix + "sdg")) {
         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send(":x: Vous n'avez pas la permission !");
             let arg = message.content.split(" ").slice(1);
