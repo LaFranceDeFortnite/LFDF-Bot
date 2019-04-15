@@ -30,10 +30,6 @@ module.exports = (client) => {
         });
             client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **DM**");
         }
-        if(message.content === "!news") {
-            message.channel.sendMessage(':globe_with_meridians: Toutes les Actualité Fornite : https://www.epicgames.com/fortnite/fr/news');
-            client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **News Fortnite**");
-        }
         if(message.content === "!twitterfr") {
             message.channel.sendMessage(':calling: Twitter Fornite France : https://twitter.com/FortniteFR');
             client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Twitter Fortnite France**");
