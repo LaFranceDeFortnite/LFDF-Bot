@@ -4,10 +4,10 @@ module.exports = (client) => {
 
     client.on("message", async message => {
 
-        let inscriptionduo = ['/', '@' ]
+        let inscriptionduo = ["Nom de l'équipe :", "Joueur 1 :", "Joueur 2 :" ]
         let noFound = false;
       
-        if(message.channel.id == "564010457980076032") {
+        if(message.channel.id == "552476052144783372") {
           if(message.member.hasPermissions("ADMINISTRATOR")) {
               return;
           }
@@ -18,7 +18,7 @@ module.exports = (client) => {
           if(noFound) {
             message.delete();
     
-            message.author.send("Bonjour !\n \nVotre message dans le channel <#552476052144783372> ne respecte pas le modèle donné \n \n``Pseudo In game / @mention\n Pseudo In game / @mention``\n \nÂ bientôt !");
+            message.author.send("Bonjour !\n \nVotre message dans le channel <#552476052144783372> ne respecte pas le modèle donné \n \n``Nom de l'équipe : \n Joueur 1 : Pseudo Fortnite Joueur 1 / @mention \n Joueur 2 : Pseudo Fortnite Joueur 2 / @mention``\n \nÂ bientôt !");
             return;
           }
         message.react("✅")
