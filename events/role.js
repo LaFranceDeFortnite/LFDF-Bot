@@ -264,7 +264,7 @@ module.exports = (bot) => {
         bot.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande Role **WEB TV**");
         }
         if(message.content === "!pc") {
-            let role = message.guild.roles.find('name', '【📌】Resp.staff')
+            let role = message.guild.roles.find('name', '【📌】 Resp.staff')
             let myRole = message.guild.roles.find(role => role.name === "【📌】Resp.staff");
             if(message.member.roles.find('name', '【📌】Resp.staff')) {
                 message.member.removeRole(role)
