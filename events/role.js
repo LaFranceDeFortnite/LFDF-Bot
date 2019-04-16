@@ -263,10 +263,30 @@ module.exports = (bot) => {
         console.log('Commande Role WEB TV');
         bot.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande Role **WEB TV**");
         }
-        if(message.content === "!pc") {
-            let role = message.guild.roles.find('name', '【📌】 Resp.staff')
-            let myRole = message.guild.roles.find(role => role.name === "【📌】Resp.staff");
-            if(message.member.roles.find('name', '【📌】Resp.staff')) {
+        if(message.content === "!b") {
+            let role = message.guild.roles.find('name', '【⚙】Staff')
+            let myRole = message.guild.roles.find(role => role.name === "【⚙】Resp.staff");
+            if(message.member.roles.find('name', '【⚙】Resp.staff')) {
+                message.member.removeRole(role)
+            var embed = new Discord.RichEmbed()
+                .setColor('cca25b')
+                .setDescription("Tu viens de quitter le groupe " + myRole)
+            message.channel.send(embed);
+            }
+            else {
+                message.member.addRole(role)
+                var embed = new Discord.RichEmbed()
+                    .setColor('cca25b')
+                    .setDescription("Tu as bien rejoint le groupe " + myRole)
+                message.channel.send(embed);
+            }
+            console.log('Commande Role PC');
+            bot.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande Role **PC**");
+        }
+        if(message.content === "!a") {
+            let role = message.guild.roles.find('name', '【📌】Resp. Staff')
+            let myRole = message.guild.roles.find(role => role.name === "【📌】Resp. Staff");
+            if(message.member.roles.find('name', '【📌】Resp. Staff')) {
                 message.member.removeRole(role)
             var embed = new Discord.RichEmbed()
                 .setColor('cca25b')
