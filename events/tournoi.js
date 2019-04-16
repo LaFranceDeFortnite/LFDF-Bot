@@ -7,7 +7,7 @@ module.exports = (client) => {
         let inscriptionduo = ['/', '@' ]
         let noFound = false;
       
-        if(message.channel.id == "552476052144783372") {
+        if(message.channel.id == "564010457980076032") {
           if(message.member.hasPermissions("ADMINISTRATOR")) {
               return;
           }
@@ -23,29 +23,6 @@ module.exports = (client) => {
           }
         message.react("✅")
         message.member.addRole('554750595374776342')
-        }
-    
-    });
-    
-    client.on("message", async message => {
-
-        let statsfortnite = ['!f' ]
-        let noFound = false;
-      
-        if(message.channel.id == "527811956875329546") {
-            if(message.member.hasPermissions("VIEW_AUDIT_LOG")) {
-              return;
-          }
-    
-          for (var i in statsfortnite) {
-          if (!message.content.toLowerCase().includes(statsfortnite[i].toLowerCase())) noFound = true;
-        }
-          if(noFound) {
-            message.delete();
-    
-            message.author.send("Bonjour !\n Merci d'utiliser ce channel seulement pour voir vos Stats Fortnite. \n Pour parler utiliser le channel #💬général =) ");
-            return;
-          }
         }
     
     });
