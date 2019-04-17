@@ -204,29 +204,3 @@ bot.on("message", async message => {
     return message.channel.send(`**${message.member.displayName}** : ${message.content}`);
   }
   });
-
-bot.on('message', message => {
-    if(message.content.startsWith(prefix + "sdg")) {
-        if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send(":x: Vous n'avez pas la permission !");
-            let arg = message.content.split(" ").slice(1);
-            let thingToEco = arg.join(" ")
-            let myRole = message.guild.roles.find(role => role.name === "【🔔】Notif");
-            bot.channels.get("515646253992771595").sendMessage("Mention : " + myRole);
-            var embed = new Discord.RichEmbed()
-                .setDescription(`📅 **SONDAGE**`)
-                .addField(thingToEco, "Répondez au sondage avec <:Yes:566681458928910367> ou <:No:566681468420489248>")
-                .setColor("ffc600")
-                .setTimestamp()
-                .setFooter("La France De Fortnite")
-            message.guild.channels.find("name", "📅sondage").sendEmbed(embed)
-            .then(function (message) {
-            message.react("✅")
-            message.react("❌")
-
-            }).catch(function() { 
-            });
-            message.delete();
-            console.log('Commande Sondage');
-            bot.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Sondage**");
-    }
-});
