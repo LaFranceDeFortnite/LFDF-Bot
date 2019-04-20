@@ -48,7 +48,7 @@ bot.connectDatabase = function connectDatabase(bot, mongoose) {
 };
 
 bot.on("ready", () => {
-    let statuses = ["Mp for Support", `Mp for Support`];
+    let statuses = ["Mp for Support !", `Mp for Support !`];
 
     setInterval(function() {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
