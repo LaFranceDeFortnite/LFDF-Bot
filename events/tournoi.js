@@ -7,7 +7,7 @@ module.exports = (client) => {
         let inscriptionduo = ["Nom de l'équipe :", "Joueur 1 :", "Joueur 2 :" ]
         let noFound = false;
       
-        if(message.channel.id == "552476052144783372") {
+        if(message.channel.id == "569932589327056947") {
           if(message.member.hasPermissions("ADMINISTRATOR")) {
               return;
           }
