@@ -194,6 +194,7 @@ bot.on("message", async message => {
         message.channel.delete();
 
         db.delete(`support_${support.targetID}`);
+        bot.users.get(support.targetID).send(`Merci d'avoir contacté le Support Bot LFDF. \n Nous te souhaitons une agréable journée/soirée et restons à votre disposition pour toute(s) autre(s) question(s). \n *Merci de ne pas répondre à la suite de ce message, sauf si vous avez d'autre(s) question(s).*`)
         return;
         }
 
