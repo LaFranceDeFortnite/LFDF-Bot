@@ -205,3 +205,28 @@ bot.on("message", async message => {
     return message.channel.send(`**${message.member.displayName}** : ${message.content}`);
   }
   });
+
+bot.on('message', message => {
+    if(message.content.startsWith(prefix + "sdg")) {
+      if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send(":x: Vous n'avez pas la permission !");
+          let emoji = message.guild.emojis.find('name', "Yess");
+          let emoji1 = message.guild.emojis.find('name', "Noo");
+          let arg = message.content.split(" ").slice(1);
+          let thingToEco = arg.join(" ")
+          let myRole = message.guild.roles.find(role => role.name === "【🔔】Notif");
+          message.guild.channels.find("name", "📅sondage").sendMessage(`:date: **Sondage du Jour** \n __Mention :__ ${myRole} \n\n __Question :__ ** ${thingToEco}** \n\n Répondez au sondage avec <a:Yess:566680823395385345> ou <a:Noo:566680901950504990> \n `+ "``By La France De Fortnite``")
+          .then(function (message) {
+          message.react(emoji)
+          message.react(emoji1)
+
+          }).catch(function() { 
+          });
+          message.guild.channels.find("name", "📅sondage").sendMessage("", {
+            files: [
+              "images/ligne.png"
+          ]
+          });
+          message.delete();
+          console.log('Commande Sondage');
+    }
+});
