@@ -4,8 +4,6 @@ const Enmap = require("enmap");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const db = require('quick.db');
-const FortniteClient = require('fortnite-client').FortniteClient;
-const FortniteBR = require('fnbrco.js');
 let prefix = "!";
 
 bot.config = require("./config.json");
@@ -208,7 +206,7 @@ bot.on("message", async message => {
 
 bot.on('message', message => {
     if(message.content.startsWith(prefix + "sdg")) {
-      if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGE")) return message.channel.send(":x: Vous n'avez pas la permission !");
+                  if(message.author.id == 419536423796998155 || message.author.id == 540597069753221149 || message.author.id == 353187152961732608) {
           let emoji = message.guild.emojis.find('name', "Yess");
           let emoji1 = message.guild.emojis.find('name', "Noo");
           let arg = message.content.split(" ").slice(1);
@@ -228,5 +226,6 @@ bot.on('message', message => {
           });
           message.delete();
           console.log('Commande Sondage');
+              }
     }
 });
