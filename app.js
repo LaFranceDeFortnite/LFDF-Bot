@@ -84,9 +84,9 @@ bot.on("message", async message => {
       channel = await channel.setParent('515876927266095105');
 
       try {
-            let ascalonall = guild.roles.find(`name`, "【✔️】Membre");
-            let moderationrole = guild.roles.find(`name`, "【⚜️】Fondateur");
-            let respmodorole = guild.roles.find(`name`, "【⚙️】Staff");
+            let ascalonall = guild.roles.find(`name`, "✔️ | Membre");
+            let moderationrole = guild.roles.find(`name`, "⚜️ | Directeur");
+            let respmodorole = guild.roles.find(`name`, "⚙️ | Staff LFDF");
 
 
             channel.overwritePermissions(ascalonall, {
@@ -211,7 +211,7 @@ bot.on('message', message => {
           let emoji1 = message.guild.emojis.find('name', "Noo");
           let arg = message.content.split(" ").slice(1);
           let thingToEco = arg.join(" ")
-          let myRole = message.guild.roles.find(role => role.name === "【🔔】Notif");
+          let myRole = message.guild.roles.find(role => role.name === "🔔 | Notif");
           message.guild.channels.find("name", "📅sondage").sendMessage(`:date: **Sondage du Jour** \n __Mention :__ ${myRole} \n\n __Question :__ ** ${thingToEco}** \n\n Répondez au sondage avec <a:Yess:566680823395385345> ou <a:Noo:566680901950504990> \n `+ "``By La France De Fortnite``")
           .then(function (message) {
           message.react(emoji)
