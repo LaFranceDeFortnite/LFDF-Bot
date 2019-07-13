@@ -228,4 +228,18 @@ bot.on('message', message => {
           console.log('Commande Sondage');
               }
     }
+        if(message.content.startsWith(prefix + "actu")) {
+      if(message.author.id == 419536423796998155 || message.author.id == 540597069753221149 || message.author.id == 353187152961732608) {
+          let arg = message.content.split(" ").slice(1);
+          let thingToEco = arg.join(" ")
+          message.guild.channels.find("name", "🌴actu-lfdf").sendMessage("``📌 NOUVELLE ACTUALITÉ ! 📌`` \n\n " + thingToEco + " \n\n __Bonne Journée !__ :crossed_swords:")
+          message.guild.channels.find("name", "🌴actu-lfdf").sendMessage("", {
+            files: [
+              "images/ligne.png"
+          ]
+          });
+          message.delete();
+          console.log('Commande Actu LFDF');
+      }
+    }
 });
