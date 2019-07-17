@@ -86,7 +86,7 @@ bot.on("message", async message => {
       try {
             let ascalonall = guild.roles.find(`name`, "✔️ | Membre");
             let moderationrole = guild.roles.find(`name`, "⚜️ | Directeur");
-            let respmodorole = guild.roles.find(`name`, "⚙️ | Staff LFDF");
+            let respmodorole = guild.roles.find(`name`, "⚙️ | Staff All");
 
 
             channel.overwritePermissions(ascalonall, {
