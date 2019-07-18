@@ -221,7 +221,7 @@ bot.on('message', message => {
           });
           message.guild.channels.find("name", "📅sondage").sendMessage("", {
             files: [
-              "images/ligne.png"
+              "images/ligne.jpg"
           ]
           });
           message.delete();
@@ -235,7 +235,7 @@ bot.on('message', message => {
           message.guild.channels.find("name", "🌴actu-lfdf").sendMessage("``📌 NOUVELLE ACTUALITÉ ! 📌`` \n\n " + thingToEco + " \n\n __Bonne Journée !__ :crossed_swords:")
           message.guild.channels.find("name", "🌴actu-lfdf").sendMessage("", {
             files: [
-              "images/ligne.png"
+              "images/ligne.jpg"
           ]
           });
           message.delete();
