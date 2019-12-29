@@ -84,9 +84,9 @@ bot.on("message", async message => {
       channel = await channel.setParent('515876927266095105');
 
       try {
-            let ascalonall = guild.roles.find(`name`, "✔️ | Membre");
-            let moderationrole = guild.roles.find(`name`, "⚜️ | Directeur");
-            let respmodorole = guild.roles.find(`name`, "⚙️ | Staff All");
+            let ascalonall = guild.roles.find(`name`, "『MEMBRE』");
+            let moderationrole = guild.roles.find(`name`, "『DIRECTEUR』");
+            let respmodorole = guild.roles.find(`name`, "『STAFF ALL』");
 
 
             channel.overwritePermissions(ascalonall, {
@@ -143,7 +143,7 @@ bot.on("message", async message => {
 
       await channel.send(newChannel);
 
-      author.send(":wave: __**Bonjour/Bonsoir**__ ! \n \n :pushpin: Merci d'avoir contacté le __Support Bot LFDF__ ! Un membre du staff va vous répondre dans les plus brefs délais. \n \n :warning: Avertissement : Si tu envoies des Messages type **Trool**/**Lien**/**Insulte**/**Raciste** ou autres au Bot, tu seras automatiquement __Banni du Serveur__.");
+      author.send(":wave: __**Bonjour/Bonsoir**__ ! \n \n :pushpin: Merci d'avoir contacté le __Support Bot UFC4__ ! Un membre du staff va vous répondre dans les plus brefs délais. \n \n :warning: Avertissement : Si tu envoies des Messages type **Trool**/**Lien**/**Insulte**/**Raciste** ou autres au Bot, tu seras automatiquement __Banni du Serveur__.");
 
       active.channelID = channel.id;
       active.targetID = author.id;
@@ -206,20 +206,20 @@ bot.on("message", async message => {
 
 bot.on('message', message => {
     if(message.content.startsWith(prefix + "sdg")) {
-                  if(message.author.id == 419536423796998155 || message.author.id == 540597069753221149 || message.author.id == 353187152961732608) {
+                  if(message.author.id == 533004332854018050 || message.author.id == 353187152961732608 || message.author.id == 419536423796998155) {
           let emoji = message.guild.emojis.find('name', "Yess");
           let emoji1 = message.guild.emojis.find('name', "Noo");
           let arg = message.content.split(" ").slice(1);
           let thingToEco = arg.join(" ")
-          let myRole = message.guild.roles.find(role => role.name === "🔔 | Notif");
-          message.guild.channels.find("name", "📅sondage").sendMessage(`:date: **Sondage du Jour** \n __Mention :__ ${myRole} \n\n __Question :__ ** ${thingToEco}** \n\n Répondez au sondage avec <a:Yess:566680823395385345> ou <a:Noo:566680901950504990> \n `+ "``By La France De Fortnite``")
+          let myRole = message.guild.roles.find(role => role.name === "『NOTIF』");
+          message.guild.channels.find("name", "『📅』sondage").sendMessage(`:date: **Sondage du Jour** \n __Mention :__ ${myRole} \n\n __Question :__ ** ${thingToEco}** \n\n Répondez au sondage avec <a:Yess:566680823395385345> ou <a:Noo:566680901950504990> \n `+ "``By La France De Fortnite``")
           .then(function (message) {
           message.react(emoji)
           message.react(emoji1)
 
           }).catch(function() { 
           });
-          message.guild.channels.find("name", "📅sondage").sendMessage("", {
+          message.guild.channels.find("name", "『📅』sondage").sendMessage("", {
             files: [
               "images/ligne.jpg"
           ]
@@ -227,19 +227,5 @@ bot.on('message', message => {
           message.delete();
           console.log('Commande Sondage');
               }
-    }
-        if(message.content.startsWith(prefix + "actu")) {
-      if(message.author.id == 419536423796998155 || message.author.id == 540597069753221149 || message.author.id == 353187152961732608) {
-          let arg = message.content.split(" ").slice(1);
-          let thingToEco = arg.join(" ")
-          message.guild.channels.find("name", "🌴actu-lfdf").sendMessage("``📌 NOUVELLE ACTUALITÉ ! 📌`` \n\n " + thingToEco + " \n\n __Bonne Journée !__ :crossed_swords:")
-          message.guild.channels.find("name", "🌴actu-lfdf").sendMessage("", {
-            files: [
-              "images/ligne.jpg"
-          ]
-          });
-          message.delete();
-          console.log('Commande Actu LFDF');
-      }
     }
 });
