@@ -32,25 +32,10 @@ module.exports = (client) => {
             .addField("**``!reseaux``**", ":computer: Affiche tous nos Réseaux")
             .addField("**``!infofortnite``**", "<:Fortnite:518772145099374605> Affiche les Commandes Fortnite")
             .addField("**``!fun``**", ":metal: Affiche les Commandes Fun")
-            .addField("**``!musique``**", "🎧 Affiche les Commandes Musique")
             .setTimestamp()
             message.channel.send(fun_embed);
             console.log('Commande Help');
             client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Help**");
-        }
-        if(message.content === "!musique") {
-            var fun_embed = new Discord.RichEmbed()
-            .setColor('RANDOM')
-            .setTitle(`🎧 Commande Musique !`)
-            .addField("**``!play [musique]``**", "▶ Lancer une Musique")
-            .addField("**``!pause``**", "⏸ Mettre en Pause la Musique")
-            .addField("**``!stop``**", "⏹ Stopper la Musique")
-            .addField("**``!queue``**", "📃 Queue de toutes les Musiques")
-            .addField("**``!skip``**", "🔁 Passer la Musique")
-            .setTimestamp()
-            message.channel.send(fun_embed);
-            console.log('Commande Musique');
-            client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Musique**");
         }
         if(message.content === prefix + "modo") {
             var mod_embed = new Discord.RichEmbed()
@@ -82,12 +67,12 @@ module.exports = (client) => {
             var info_embed = new Discord.RichEmbed()
             .setColor('')
             .setTitle(":wrench: Informations sur le Serveur")
-            .addField("Créateur :", "Stricix & Azvox", true)
+            .addField("Créateur :", "Bebert & Deus", true)
             .addField("Nom du Serveur :", message.guild.name, true)
-            .addField("Serveur créer :", "le 23/11/2018", true)
+            .addField("Serveur créer :", "le 1/01/2020", true)
             .addField("Nombre de membres :", message.guild.members.size, true)
             .addField("Nombre de catégories et de salons :", message.guild.channels.size, true)
-            .setFooter("Serveur : La France De Fortnite | ID : 515604887686610944")
+            .setFooter("Serveur : uFc4 Esport | ID : 515604887686610944")
             message.channel.sendMessage(info_embed);
             console.log('Commande Info');
             client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Info**");
