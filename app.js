@@ -81,7 +81,7 @@ bot.on("message", async message => {
 
       channel = await guild.createChannel(`${message.author.username}-${message.author.discriminator}`);
 
-      channel = await channel.setParent('515876927266095105');
+      channel = await channel.setParent('661697033643491329');
 
       try {
             let ascalonall = guild.roles.find(`name`, "『MEMBRE』");
