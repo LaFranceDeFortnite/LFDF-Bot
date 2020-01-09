@@ -22,13 +22,13 @@ module.exports = (client) => {
                 .addField("Language de programmation", "Javascript", true)
                 .addField("Version 1.0.0", true)
                 .addField("Librairies", "Discord.js : **LFDF Bot**" + " | Node.js : " + process.versions.node, true)
-                .setFooter("LFDF | Tous droits réservés")
+                .setFooter("uFc4 | Tous droits réservés")
                 .setTimestamp(new Date());
             message.channel.send(bot_embed);
         }
         if(message.content === "!ping") {
             message.channel.send(":ping_pong: Pong ! (`"+ `${message.createdTimestamp - Date.now()}` + '` ms)');
-            client.channels.get("540107675397128202").send("Log / Utilisateur **" + message.author.username + "** / Commande **Ping**");
+            client.channels.get("664916311838687242").send("Log / Utilisateur **" + message.author.username + "** / Commande **Ping**");
         }
         if(message.content === "!calin") {
             message.channel.send('`＼(^o^)／`').then(async message => {
