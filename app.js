@@ -212,7 +212,7 @@ bot.on('message', message => {
           let arg = message.content.split(" ").slice(1);
           let thingToEco = arg.join(" ")
           let myRole = message.guild.roles.find(role => role.name === "『NOTIF』");
-          message.guild.channels.find("name", "『📅』sondage").sendMessage(`:date: **Sondage du Jour** \n __Mention :__ ${myRole} \n\n __Question :__ ** ${thingToEco}** \n\n Répondez au sondage avec <a:Yess:566680823395385345> ou <a:Noo:566680901950504990> \n `+ "``By La France De Fortnite``")
+          message.guild.channels.find("name", "『📅』sondage").sendMessage(`:date: **Sondage du Jour** \n __Mention :__ ${myRole} \n\n __Question :__ ** ${thingToEco}** \n\n Répondez au sondage avec <a:Yess:566680823395385345> ou <a:Noo:566680901950504990> \n `+ "``By uFc4``")
           .then(function (message) {
           message.react(emoji)
           message.react(emoji1)
