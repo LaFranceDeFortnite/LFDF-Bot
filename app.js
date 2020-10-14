@@ -85,7 +85,7 @@ bot.on("message", async message => {
 
       try {
             let lfdfall = guild.roles.find(`name`, "『MEMBRE』");
-            let moderationrole = guild.roles.find(`name`, "『RESP. STAFF』");
+            let moderationrole = guild.roles.find(`name`, "『RESPONSABLE』");
             let respmodorole = guild.roles.find(`name`, "『STAFF ALL』");
 
 
@@ -143,7 +143,7 @@ bot.on("message", async message => {
 
       await channel.send(newChannel);
 
-      author.send(":wave: __**Bonjour/Bonsoir**__ ! \n \n :pushpin: Merci d'avoir contacté le __Support Bot UFC4__ ! Un membre du staff va vous répondre dans les plus brefs délais. \n \n :warning: Avertissement : Si tu envoies des Messages type **Trool**/**Lien**/**Insulte**/**Raciste** ou autres au Bot, tu seras automatiquement __Banni du Serveur__.");
+      author.send(":wave: __**Bonjour/Bonsoir**__ ! \n \n :pushpin: Merci d'avoir contacté le __Support Bot LFDF Esport__ ! Un membre du staff va vous répondre dans les plus brefs délais. \n \n :warning: Avertissement : Si tu envoies des Messages type **Trool**/**Lien**/**Insulte**/**Raciste** ou autres au Bot, tu seras automatiquement __Banni du Serveur__.");
 
       active.channelID = channel.id;
       active.targetID = author.id;
