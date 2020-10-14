@@ -55,10 +55,9 @@ bot.on("ready", () => {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
         bot.user.setActivity(status, {type: "STREAMING", url:"https://www.twitch.tv/lafrancedefortnite"});
     }, 5000)
-    bot.channels.get("540107675397128202").send(`:white_check_mark: Bot **${bot.user.username}** en ligne, Prêt à travailler !`);
 });
 
-bot.login("NjA0NDM0NTI1MDk4ODY4NzQy.XTt9LQ.GEf4GhO7k5NezIi-ArTXKhqCJB0");
+bot.login(process.env.token);
 
 bot.on("message", async message => {
 
