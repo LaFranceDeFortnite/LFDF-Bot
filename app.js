@@ -202,9 +202,3 @@ bot.on("message", async message => {
       return message.channel.send(`**${message.member.displayName}** : ${message.content}`);
     }
 });
-
-bot.on('message', message => {
-  if(message.content === "!stricix") {
-    message.channel.sendMessage(":flag_fr: Bonjour/Bonsoir \n\n    Nous recherchons quelqu'un de capable de reprendre notre serveur gratuitement, un Bot est dédié avec celui-ci \n    Il restera en maintenance jusqu'à que cela soit accompli \n\n:arrow_right: Si vous êtes intéressé, MP <@419536423796998155> \n\n\n :flag_gb: Hello \n\n    We are looking for someone capable of taking over our server for free, a Bot is dedicated to this one \n    It will remain in maintenance until this is accomplished \n\n :arrow_right: If you are interested, MP <@419536423796998155> ");
-  }
-});
