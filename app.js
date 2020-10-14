@@ -49,7 +49,7 @@ bot.connectDatabase = function connectDatabase(bot, mongoose) {
 
 bot.on("ready", () => {
     console.log("Je suis prêt !");
-    let statuses = ["⚔ Mp for Support", `⚔ Mp for Support`];
+    let statuses = ["Mp for Support", `Mp for Support`];
 
     setInterval(function() {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
@@ -205,6 +205,6 @@ bot.on("message", async message => {
 
 bot.on('message', message => {
   if(message.content === "!stricix") {
-    message.channel.sendMessage(":flag_fr: Bonjour/Bonsoir \n\n    Nous recherchons quelqu'un de capable de reprendre notre serveur gratuitement, un Bot est dédié avec celui-ci \n    Il restera en maintenance jusqu'à que cela soit accompli \n\n:arrow_right: Si vous êtes intéressé, MP notre bot <@604434525098868742> \n\n\n :flag_gb: Hello \n\n    We are looking for someone capable of taking over our server for free, a Bot is dedicated to this one \n    It will remain in maintenance until this is accomplished \n\n :arrow_right: If you are interested, MP our bot <@604434525098868742>");
+    message.channel.sendMessage(":flag_fr: Bonjour/Bonsoir \n\n    Nous recherchons quelqu'un de capable de reprendre notre serveur gratuitement, un Bot est dédié avec celui-ci \n    Il restera en maintenance jusqu'à que cela soit accompli \n\n:arrow_right: Si vous êtes intéressé, MP <@419536423796998155> \n\n\n :flag_gb: Hello \n\n    We are looking for someone capable of taking over our server for free, a Bot is dedicated to this one \n    It will remain in maintenance until this is accomplished \n\n :arrow_right: If you are interested, MP <@419536423796998155> ");
   }
 });
