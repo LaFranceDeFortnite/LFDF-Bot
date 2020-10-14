@@ -81,15 +81,15 @@ bot.on("message", async message => {
 
       channel = await guild.createChannel(`${message.author.username}-${message.author.discriminator}`);
 
-      channel = await channel.setParent('661697033643491329');
+      channel = await channel.setParent('661697034683940879');
 
       try {
-            let ascalonall = guild.roles.find(`name`, "『MEMBRE』");
-            let moderationrole = guild.roles.find(`name`, "『DIRECTEUR』");
+            let lfdfall = guild.roles.find(`name`, "『MEMBRE』");
+            let moderationrole = guild.roles.find(`name`, "『RESP. STAFF』");
             let respmodorole = guild.roles.find(`name`, "『STAFF ALL』");
 
 
-            channel.overwritePermissions(ascalonall, {
+            channel.overwritePermissions(lfdfall, {
             CREATE_INSTANT_INVITE: false,
             KICK_MEMBERS: false,
             BAN_MEMBERS: false,
@@ -203,29 +203,4 @@ bot.on("message", async message => {
     return message.channel.send(`**${message.member.displayName}** : ${message.content}`);
   }
   });
-
-bot.on('message', message => {
-    if(message.content.startsWith(prefix + "sdg")) {
-                  if(message.author.id == 533004332854018050 || message.author.id == 353187152961732608 || message.author.id == 419536423796998155) {
-          let emoji = message.guild.emojis.find('name', "Yess");
-          let emoji1 = message.guild.emojis.find('name', "Noo");
-          let arg = message.content.split(" ").slice(1);
-          let thingToEco = arg.join(" ")
-          let myRole = message.guild.roles.find(role => role.name === "『NOTIF』");
-          message.guild.channels.find("name", "『📅』sondage").sendMessage(`:date: **Sondage du Jour** \n __Mention :__ ${myRole} \n\n __Question :__ ** ${thingToEco}** \n\n Répondez au sondage avec <a:Yess:566680823395385345> ou <a:Noo:566680901950504990> \n `+ "``By uFc4``")
-          .then(function (message) {
-          message.react(emoji)
-          message.react(emoji1)
-
-          }).catch(function() { 
-          });
-          message.guild.channels.find("name", "『📅』sondage").sendMessage("", {
-            files: [
-              "images/ligne.jpg"
-          ]
-          });
-          message.delete();
-          console.log('Commande Sondage');
-              }
-    }
 });
